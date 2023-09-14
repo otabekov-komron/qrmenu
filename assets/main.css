@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: "light_sf";
+    src: url('../assets/fonts/sf-pro-rounded-light.otf')
+}
+@font-face {
+    font-family: "bold_sf";
+    src: url('../assets/fonts/FontsFree-Net-SF-Pro-Rounded-Heavy.ttf')
+}
+@font-face {
+    font-family: "sf_Text";
+    src: url('../assets/fonts/SFProText-Regular.ttf')
+}
+
+html {
+    font-family: "bold_sf";
+}
