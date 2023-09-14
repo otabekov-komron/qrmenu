@@ -1,5 +1,5 @@
 <template>
-    <div class="sticky bottom-0 z-10 bg-[#F2F2F2] flex items-center justify-between p-4">
+    <div class="fixed w-[100%]  bottom-0 z-10 bg-[#F2F2F2] flex items-center justify-between p-4">
         <NuxtLink :to="`/`">
             <Icon size="30px" name="material-symbols:home-outline" color="#9A9A9D" />
         </NuxtLink>
