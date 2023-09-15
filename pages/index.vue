@@ -1,6 +1,6 @@
 <template>
     <div class="p-4 px-0 flex flex-col min-h-screen flex-wrap items-center justify-center ">
-        <p class="text-[34px] font-[900]   "> Delicious food for you</p>
+        <p class="text-[30px] font-[900] px-4 text-center"> Delicious food for you</p>
         <div class="mt-7 flex justify-center pb-4 w-[100%] bg-[#f2f2f2]">
             <form class=" flex gap-2 w-[90%] items-center p-5 py-3 rounded-full bg-[#EFEEEE] ">
                 <Icon size="28px" name="lucide:search" />
@@ -18,16 +18,16 @@
             <div class="grid px-4 grid-cols-2 gap-2 gap-x-4 gap-y-20 mt-10 pt-4 pb-5 ">
 
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Hot Soup Mix" price="17000 so'm" product="product.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Hot Soup Mix" price="17000 so'm" product="product.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Hot Soup Mix" price="17000 so'm" product="product.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Hot Soup Mix" price="17000 so'm" product="product.png"/>
                 </NuxtLink>
 
             </div>
@@ -37,16 +37,16 @@
             <div class="grid px-4 grid-cols-2 gap-2 gap-x-4 gap-y-20 mt-10 pt-4 pb-4 ">
 
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Orange cocktail" price="25000 so'm" product="drink.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Orange cocktail" price="25000 so'm" product="drink.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Orange cocktail" price="25000 so'm" product="drink.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Orange cocktail" price="25000 so'm" product="drink.png"/>
                 </NuxtLink>
 
             </div>
@@ -56,16 +56,16 @@
             <div class="grid px-4 grid-cols-2 gap-2 gap-x-4 gap-y-20 mt-10 pt-4 pb-4">
 
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Onion crisps" price="15000 so'm" product="snack.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Onion crisps" price="15000 so'm" product="snack.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Onion crisps" price="15000 so'm" product="snack.png"/>
                 </NuxtLink>
                 <NuxtLink :to="`/product/${id}`">
-                    <Food />
+                    <Food name="Onion crisps" price="15000 so'm" product="snack.png"/>
                 </NuxtLink>
 
             </div>
