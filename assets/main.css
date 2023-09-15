@@ -3,18 +3,19 @@
 @tailwind utilities;
 
 @font-face {
-    font-family: "light_sf";
-    src: url('../assets/fonts/sf-pro-rounded-light.otf')
+  font-family: "light_sf";
+  src: url("/fonts/sf-pro-rounded-light.otf");
 }
 @font-face {
-    font-family: "bold_sf";
-    src: url('../assets/fonts/FontsFree-Net-SF-Pro-Rounded-Heavy.ttf')
+  font-family: "bold_sf";
+  src: url("/fonts/FontsFree-Net-SF-Pro-Rounded-Heavy.ttf");
 }
 @font-face {
-    font-family: "sf_Text";
-    src: url('../assets/fonts/SFProText-Regular.ttf')
+  font-family: "sf_Text";
+  src: url("/fonts/SFProText-Regular.ttf");
 }
 
 html {
-    font-family: "bold_sf";
+  font-family: "bold_sf";
+  scroll-behavior: smooth;
 }

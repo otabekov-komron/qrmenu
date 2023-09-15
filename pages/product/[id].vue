@@ -1,13 +1,13 @@
 <template>
     <div class="py-5">
         <div class="flex justify-between px-7 items-center">
-            <NuxtLink :to="`/`">
+            <NuxtLink to="/">
                 <Icon color="rgba(0, 0, 0, 1)" size="24px" name="material-symbols:arrow-back-ios-rounded" />
             </NuxtLink>
-            <button @click="toggleLike" class="like-button" :class="{ 'clicked': liked }">
-                <Icon v-if="liked" name="ic:baseline-favorite-border" size="24px" />
-                <Icon v-else name="ic:baseline-favorite" color="#FA4A0C" size="24px" />
-            </button>
+            <span @click="toggleLike" class="like-button" :class="{ 'clicked': liked }">
+                <Icon v-if="liked" name="ic:baseline-favorite-border" size="28px" />
+                <Icon v-else name="ic:baseline-favorite" color="#FA4A0C" size="28px" />
+            </span>
         </div>
         <div class="py-4">
             <Swiper :height="300" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
@@ -38,27 +38,32 @@
         </div>
         <div class="my-10 mx-2">
             <p class="text-[18px] uppercase">Ingredients:</p>
-            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste, Vegetable broth, Garlic, Seasonings</div>
+            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
+                Vegetable broth, Garlic, Seasonings</div>
         </div>
         <div class="my-10 mx-2">
             <p class="text-[18px] uppercase">Ingredients:</p>
-            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste, Vegetable broth, Garlic, Seasonings</div>
+            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
+                Vegetable broth, Garlic, Seasonings</div>
         </div>
         <div class="flex w-[100%] justify-center px-8">
             <button class="text-[#F6F6F9] w-[100%] text-center btn text-[17px] p-4  rounded-[30px]
         ">
-            Add to cart
-        </button>
+                Add to cart
+            </button>
         </div>
     </div>
 </template>
 
 <script setup>
+const liked = ref(true);
+const toggleLike = () => {
+    liked.value = !liked.value
+}
 const slides = ref(Array.from({ length: 10 }, () => {
     const r = Math.floor(Math.random() * 256)
     const g = Math.floor(Math.random() * 256)
     const b = Math.floor(Math.random() * 256)
-    // Figure out contrast color for font
     const contrast = r * 0.299 + g * 0.587 + b * 0.114 > 186 ? 'black' : 'white'
 
     return { bg: `rgb(${r}, ${g}, ${b})`, color: contrast }
@@ -69,40 +74,29 @@ definePageMeta({
 });
 
 </script>
-<script>
-export default {
-  data() {
-    return {
-      liked: false,
-    };
-  },
-  methods: {
-    toggleLike() {
-      this.liked = !this.liked;
-    },
-  },
-}
-</script>
 <style scoped>
 .like-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  transition: transform 0.3s ease;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s ease;
 }
 
 .like-button.clicked {
-  transform: scale(0.9); /* Shrink the button when clicked */
+    transform: scale(0.9);
+    /* Shrink the button when clicked */
 }
 
 .like-button:hover {
-  transform: scale(1.1);
+    transform: scale(1.1);
 }
+
 .btn {
     font-family: "sf_Text";
     font-weight: 400;
     background: rgba(250, 74, 12, 1);
 }
+
 .swiper-slide {
     display: flex;
     justify-content: center;
@@ -113,6 +107,7 @@ export default {
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
 }
+
 .ingredients {
     font-family: 'sf_Text';
 }

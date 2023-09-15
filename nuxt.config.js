@@ -2,7 +2,7 @@ import { defineNuxtConfig } from "nuxt/config";
 
 export default defineNuxtConfig({
   // My Nuxt config
-  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", 'nuxt-swiper'],
+  modules: ["@nuxtjs/tailwindcss", "nuxt-icon", "nuxt-swiper"],
   build: {
     postcss: {
       postcssOptions: {
