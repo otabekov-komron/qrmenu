@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="flex items-center justify-center sticky top-0 z-10 bg-[#F2F2F2] p-4">
-            <img src="/images/logo.png/" alt="logo" class="w-[55px]" />
+            <img src="/images/logo.png" alt="logo" class="w-[55px]" />
         </div>
         <slot />
         <div class="fixed w-[100%]  bottom-0  z-10 bg-[#F2F2F2] flex items-center justify-between p-4">
