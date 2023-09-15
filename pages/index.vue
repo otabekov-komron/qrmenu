@@ -13,7 +13,7 @@
         <FoodTypes />
         <div class="ps-10 mt-10 w-[100%] flex gap-7 pt-10 pb-4 scrollbar-hidden overflow-x-auto">
             <NuxtLink :to="`/product/${id}`">
-                <Food img="@/assets/images/product.png" title="Veggie tomato mix" price="17,000 so'm" id="1" />
+                <Food />
             </NuxtLink>
             <Food />
             <Food />
@@ -25,7 +25,7 @@
     </div>
 </template>
 <script setup>
-const id = ref(1);
+const id = ref(1)
 </script>
 <style>
 .scrollbar-hidden::-webkit-scrollbar {

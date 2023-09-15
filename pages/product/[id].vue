@@ -1,18 +1,20 @@
 <template>
-    <div class="pt-5">
+    <div class="py-5">
         <div class="flex justify-between px-7 items-center">
             <NuxtLink :to="`/`">
                 <Icon color="rgba(0, 0, 0, 1)" size="24px" name="material-symbols:arrow-back-ios-rounded" />
             </NuxtLink>
-            <button>
-                <Icon name="ic:baseline-favorite-border" size="20px" />
+            <button @click="toggleLike" class="like-button" :class="{ 'clicked': liked }">
+                <Icon v-if="liked" name="ic:baseline-favorite-border" size="24px" />
+                <Icon v-else name="ic:baseline-favorite" color="#FA4A0C" size="24px" />
             </button>
         </div>
-        <Swiper :height="300" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
-            :effect="'creative'" :autoplay="{
-                delay: 8000,
-                disableOnInteraction: true
-            }" :creative-effect="{
+        <div class="py-4">
+            <Swiper :height="300" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
+                :effect="'creative'" :autoplay="{
+                    delay: 3000,
+                    disableOnInteraction: false
+                }" :creative-effect="{
     prev: {
         shadow: false,
         translate: ['-20%', 0, -1]
@@ -21,14 +23,33 @@
         translate: ['100%', 0, 0]
     }
 }">
-            <SwiperSlide v-for="(slide, idx) in slides" :key="idx"
-                :style="`background-color: ${slide.bg}; color: ${slide.color}`">
-                {{ idx }}
-            </SwiperSlide>
+                <SwiperSlide v-for="(slide, idx) in slides" :key="idx"
+                    :style="`background-color: ${slide.bg}; color: ${slide.color}`">
+                    {{ idx }}
+                </SwiperSlide>
 
-            <!-- useSwiper() within a swiper instance -->
-            <SwiperControls />
-        </Swiper>
+                <!-- useSwiper() within a swiper instance -->
+                <SwiperControls />
+            </Swiper>
+        </div>
+        <div>
+            <p class="text-black text-[28px] text-center font-normal">Veggie tomato mix</p>
+            <p class="text-[#FA4A0C] text-[22px] text-center font-normal">17,000 so'm</p>
+        </div>
+        <div class="my-10 mx-2">
+            <p class="text-[18px] uppercase">Ingredients:</p>
+            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste, Vegetable broth, Garlic, Seasonings</div>
+        </div>
+        <div class="my-10 mx-2">
+            <p class="text-[18px] uppercase">Ingredients:</p>
+            <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste, Vegetable broth, Garlic, Seasonings</div>
+        </div>
+        <div class="flex w-[100%] justify-center px-8">
+            <button class="text-[#F6F6F9] w-[100%] text-center btn text-[17px] p-4  rounded-[30px]
+        ">
+            Add to cart
+        </button>
+        </div>
     </div>
 </template>
 
@@ -43,25 +64,56 @@ const slides = ref(Array.from({ length: 10 }, () => {
     return { bg: `rgb(${r}, ${g}, ${b})`, color: contrast }
 }))
 
-
-const props = defineProps({
-    data: {
-        type: String,
-    }
-});
 definePageMeta({
     layout: false,
-})
+});
+
+</script>
+<script>
+export default {
+  data() {
+    return {
+      liked: false,
+    };
+  },
+  methods: {
+    toggleLike() {
+      this.liked = !this.liked;
+    },
+  },
+}
 </script>
 <style scoped>
+.like-button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.like-button.clicked {
+  transform: scale(0.9); /* Shrink the button when clicked */
+}
+
+.like-button:hover {
+  transform: scale(1.1);
+}
+.btn {
+    font-family: "sf_Text";
+    font-weight: 400;
+    background: rgba(250, 74, 12, 1);
+}
 .swiper-slide {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 18px;
-    height: 20vh;
+    height: 200px;
     font-size: 4rem;
     font-weight: bold;
     font-family: 'Roboto', sans-serif;
+}
+.ingredients {
+    font-family: 'sf_Text';
 }
 </style>
