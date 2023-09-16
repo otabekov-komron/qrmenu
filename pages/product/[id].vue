@@ -47,13 +47,35 @@
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
         <div class="flex w-[100%] justify-center px-8">
-            <button class="text-[#F6F6F9] w-[100%] text-center btn text-[17px] p-4  rounded-[30px]
-        ">
-                Add to cart
+            <button class="text-[#F6F6F9] bg-[#faaaaa] w-[100%] text-center btn text-[17px] p-4 py-5 rounded-[30px]"
+                :class="{ 'bg-[#f4f4f4]': isDisabled }" @click="addToCart" :disabled="isDisabled">
+                {{ buttonText }}
             </button>
         </div>
     </div>
 </template>
+<script>
+export default {
+    data() {
+        return {
+            buttonText: "Add to cart",
+            isDisabled: false,
+        };
+    },
+    methods: {
+        addToCart() {
+            // Perform any necessary logic, e.g., adding the product to the cart
+
+            // Update the button text
+            this.buttonText = "Product has been added";
+
+            // Disable the button
+            this.isDisabled = true;
+        },
+    },
+};
+</script>
+
 
 <script setup>
 const liked = ref(true);
@@ -75,6 +97,13 @@ definePageMeta({
 
 </script>
 <style scoped>
+.gray-button {
+    background-color: #ccc;
+    /* Gray background color */
+    color: #000;
+    /* Text color */
+}
+
 .like-button {
     background-color: transparent;
     border: none;
