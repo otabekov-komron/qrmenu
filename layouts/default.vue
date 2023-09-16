@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="flex items-center justify-center sticky top-0 z-10 bg-[#F2F2F2] p-4">
+        <div class="flex items-center justify-center sticky top-0 z-10 bg-[#fff] p-4">
             <img src="/images/logo.png" alt="logo" class="w-[55px]" />
         </div>
         <slot />
