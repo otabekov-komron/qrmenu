@@ -41,47 +41,39 @@
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
-        <div class="my-10 mb-[100px] mx-2">
+        <div class="my-10 mb-[75px] mx-2">
             <p class="text-[18px] uppercase">Ingredients:</p>
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
-        <div class="flex w-[100%] justify-center px-8 py-4 fixed bottom-0 bg-[#f6f6f6] border-none">
-            <button class="text-[#F6F6F9]  w-[100%] text-center button text-[17px] p-4 py-5 rounded-[30px]"
-                :class="{ 'bg-[#f4f4f4]': isDisabled }" @click="addToCart" :disabled="isDisabled">
-                {{ buttonText }}
+        <div class="flex w-[100%] items-center justify-between px-8  py-4 fixed bottom-0 bg-[#f6f6f6]">
+            <button ref="elementToStyle"
+                class="text-[#F6F6F9] w-[50%] text-center button text-[17px] p-4 py-2 rounded-[30px]"
+                @click="applyStyles">
+                <p ref="elementToStyle">{{ buttonText }}</p>
             </button>
+            <div class=" flex items-center gap-4 text-[18px] incdec bg-[#ffe100]    rounded-full ">
+                <button class=" border-e-2 p-2 flex  justify-center text-center " @click="dec">-</button>
+                <div class="text-center flex items-center justify-center max-w-[15px]">{{ num }}</div>
+                <button class="border-s-2 p-2 flex  justify-center text-center " @click="inc">+</button>
+            </div>
         </div>
     </div>
 </template>
-<script>
-export default {
-    data() {
-        return {
-            buttonText: "Add to cart",
-            isDisabled: false,
-        };
-    },
-    methods: {
-        addToCart() {
-            // Perform any necessary logic, e.g., adding the product to the cart
-
-            // Update the button text
-            this.buttonText = "Product has been added";
-
-            // Disable the button
-            this.isDisabled = true;
-        },
-    },
-};
-</script>
-
-
 <script setup>
 const liked = ref(true);
+const buttonText = ref("Add to cart");
+const num = ref(0);
+const elementToStyle = ref(null);
 const toggleLike = () => {
     liked.value = !liked.value
 }
+const applyStyles = () => {
+    if (elementToStyle.value) {
+        buttonText.value = "✔"
+        elementToStyle.value.style.backgroundColor = '#b9b9b9';
+    }
+};
 const slides = ref(Array.from({ length: 10 }, () => {
     const r = Math.floor(Math.random() * 256)
     const g = Math.floor(Math.random() * 256)
@@ -91,18 +83,21 @@ const slides = ref(Array.from({ length: 10 }, () => {
     return { bg: `rgb(${r}, ${g}, ${b})`, color: contrast }
 }))
 
+const inc = () => {
+    num.value += 1;
+}
+const dec = () => {
+    if (num.value === 0) {
+        return num.value = 0;
+    }
+    return num.value -= 1;
+}
 definePageMeta({
     layout: false,
 });
 
 </script>
 <style scoped>
-.gray-button {
-    background-color: #ccc;
-    /* Gray background color */
-    color: #000;
-    /* Text color */
-}
 
 .like-button {
     background-color: transparent;
@@ -124,6 +119,10 @@ definePageMeta({
     font-family: "sf_Text";
     font-weight: 400;
     background: rgba(250, 74, 12, 1);
+}
+.incdec{
+    font-family: "sf_Text";
+    font-weight: 400;
 }
 
 .swiper-slide {
