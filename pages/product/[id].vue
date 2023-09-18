@@ -41,7 +41,7 @@
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
-        <div class="my-10 mb-[75px] mx-2">
+        <div class="my-10 mb-[20%] mx-2">
             <p class="text-[18px] uppercase">Ingredients:</p>
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
