@@ -1,6 +1,6 @@
 <template>
-    <div class="py-5">
-        <div class="flex justify-between px-7 items-center">
+    <div class="">
+        <div class="flex justify-between sticky top-0 z-10 bg-[#f6f6f6] py-4 px-4 items-center">
             <NuxtLink to="/">
                 <Icon color="rgba(0, 0, 0, 1)" size="24px" name="material-symbols:arrow-back-ios-rounded" />
             </NuxtLink>
@@ -9,7 +9,7 @@
                 <Icon v-else name="ic:baseline-favorite" color="#FA4A0C" size="28px" />
             </span>
         </div>
-        <div class="py-4">
+        <div class="pb-4">
             <Swiper :height="300" :modules="[SwiperAutoplay, SwiperEffectCreative]" :slides-per-view="1" :loop="true"
                 :effect="'creative'" :autoplay="{
                     delay: 3000,
@@ -41,13 +41,13 @@
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
-        <div class="my-10 mx-2">
+        <div class="my-10 mb-[100px] mx-2">
             <p class="text-[18px] uppercase">Ingredients:</p>
             <div class="my-5 text-[17px] text-justify ingredients ">San Marzano tomatoes, Olive oil, Veggies, Tomato paste,
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
-        <div class="flex w-[100%] justify-center px-8">
-            <button class="text-[#F6F6F9] bg-[#faaaaa] w-[100%] text-center btn text-[17px] p-4 py-5 rounded-[30px]"
+        <div class="flex w-[100%] justify-center px-8 py-4 fixed bottom-0 bg-[#f6f6f6] border-none">
+            <button class="text-[#F6F6F9]  w-[100%] text-center button text-[17px] p-4 py-5 rounded-[30px]"
                 :class="{ 'bg-[#f4f4f4]': isDisabled }" @click="addToCart" :disabled="isDisabled">
                 {{ buttonText }}
             </button>
@@ -120,7 +120,7 @@ definePageMeta({
     transform: scale(1.1);
 }
 
-.btn {
+.button {
     font-family: "sf_Text";
     font-weight: 400;
     background: rgba(250, 74, 12, 1);
