@@ -47,15 +47,13 @@
                 Vegetable broth, Garlic, Seasonings</div>
         </div>
         <div class="flex w-[100%] items-center justify-between px-8  py-4 fixed bottom-0 bg-[#f6f6f6]">
-            <button ref="elementToStyle"
-                class="text-[#F6F6F9] w-[50%] text-center button text-[17px] p-4 py-2 rounded-[30px]"
-                @click="applyStyles">
+            <button ref="elementToStyle" class="text-[#F6F6F9] w-[50%] text-center button text-[17px] p-4 py-2.5  rounded-full" @click="applyStyles">
                 <p ref="elementToStyle">{{ buttonText }}</p>
             </button>
-            <div class=" flex items-center gap-4 text-[18px] incdec bg-[#ffe100]    rounded-full ">
-                <button class=" border-e-2 p-2 flex  justify-center text-center " @click="dec">-</button>
-                <div class="text-center flex items-center justify-center max-w-[15px]">{{ num }}</div>
-                <button class="border-s-2 p-2 flex  justify-center text-center " @click="inc">+</button>
+            <div class="border-[1px] border-black flex items-center gap-4 text-[18px] incdec text-black rounded-full ">
+                <button class=" p-2 flex  justify-center text-center " @click="dec">-</button>
+                <div class="text-center flex items-center justify-center max-w-[5px]">{{ num }}</div>
+                <button class=" p-2 flex  justify-center text-center " @click="inc">+</button>
             </div>
         </div>
     </div>
@@ -71,6 +69,7 @@ const toggleLike = () => {
 const applyStyles = () => {
     if (elementToStyle.value) {
         buttonText.value = "✔"
+        elementToStyle.value.style.color = "white"
         elementToStyle.value.style.backgroundColor = '#b9b9b9';
     }
 };
@@ -98,7 +97,6 @@ definePageMeta({
 
 </script>
 <style scoped>
-
 .like-button {
     background-color: transparent;
     border: none;
@@ -120,7 +118,8 @@ definePageMeta({
     font-weight: 400;
     background: rgba(250, 74, 12, 1);
 }
-.incdec{
+
+.incdec {
     font-family: "sf_Text";
     font-weight: 400;
 }
