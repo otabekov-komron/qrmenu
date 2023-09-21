@@ -1,14 +1,14 @@
 <template>
     <div class="bg-[#fff] p-4 px-0 flex flex-col min-h-screen flex-wrap items-center justify-center">
         <p class="text-[30px] font-[900] px-4 text-center">Delicious food for you</p>
-        <div class="mt-7 flex justify-center pb-4 w-[100%] bg-[#fff]">
+        <!-- <div class="mt-7 flex justify-center pb-4 w-[100%] bg-[#fff]">
             <form class="flex gap-2 w-[90%] items-center p-5 py-3 rounded-full bg-[#EFEEEE]">
                 <Icon size="28px" name="lucide:search" />
                 <input
                     class="opacity-[0.5] search font-[400] bg-[#EFEEEE] text-[#000] outline-none text-[17px] font-['light_sf']"
                     type="search" placeholder="Search" name="" id="" />
             </form>
-        </div>
+        </div> -->
         <FoodTypes />
         <div class="list mb-10 bg-[#f2f2f2]">
             <Section :id="'foods'" title="Foods" :foods="foodsData.foods" />
