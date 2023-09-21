@@ -2,7 +2,12 @@
     <div class="bg-[#fff] p-4 px-0 flex flex-col min-h-screen flex-wrap items-center justify-center">
         <p class="text-[30px] font-[900] px-4 text-center">Delicious food for you</p>
         <div class="mt-7 flex justify-center pb-4 w-[100%] bg-[#fff]">
-            <!-- Your search form here -->
+            <form class="flex gap-2 w-[90%] items-center p-5 py-3 rounded-full bg-[#EFEEEE]">
+                <Icon size="28px" name="lucide:search" />
+                <input
+                    class="opacity-[0.5] search font-[400] bg-[#EFEEEE] text-[#000] outline-none text-[17px] font-['light_sf']"
+                    type="search" placeholder="Search" name="" id="" />
+            </form>
         </div>
         <FoodTypes />
         <div class="list mb-10 bg-[#f2f2f2]">
@@ -50,4 +55,23 @@ const foodsData = {
     ],
 };
 </script>
+<style scoped>
+input[type="search"]::-webkit-search-cancel-button {
+  color: white;
+  cursor: pointer;
+  position: relative;
+  left: 4px;
+  background: #000;
+  bottom: 15px;
+  z-index: 10;
+}
+.active {
+    border-bottom: 2px solid #fa4a0c;
+}
+
+.search {
+  font-family: 'sf_Text';
+  width: 150%;
+}
+</style>
   
