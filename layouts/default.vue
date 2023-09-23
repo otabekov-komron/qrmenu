@@ -10,7 +10,10 @@
             </NuxtLink>
 
             <NuxtLink to="/history">
-                <Icon size="30px" name="akar-icons:history" color="#9A9A9D" />
+                <Icon size="28px" name="akar-icons:history" color="#9A9A9D" />
+            </NuxtLink>
+            <NuxtLink to="/search">
+                <Icon size="27px" name="ph:magnifying-glass-bold" color="#9A9A9D" />
             </NuxtLink>
             <NuxtLink to="/cart">
                 <Icon size="30px" name="material-symbols:shopping-cart-outline" color="#9A9A9D" />

@@ -1,15 +1,14 @@
 <template>
-    <div class="m-0 max-h-screen min-h-screen py-10 bg-[#F5F5F5]">
+    <div class="m-0 h-[100vh] py-10 bg-[#F5F5F5]">
         <PageHead text="Favorites" />
-
-        <div class="flex flex-col gap-3 py-40 items-center justify-center text-center">
-            <Icon name="tabler:heart-x" size="108px" color="rgba(199, 199, 199, 1)" />
-            <h1 class="history text-[28px]'">No favorites yet</h1>
-            <p class="opacity-[0.57] w-[60%] font-[200] history text-17px">Hit the orange button down below to Create an
-                order</p>
-        </div>
-        <div class="flex  justify-center px-8">
-            <Btn class="w-[100%]" title="Start ordering" />
+        <div>
+            <div class="py-[20vh]">
+                <ErrorItem icon="tabler:heart-x" sizeIcon="100px" text="No favorites yet" desc="Hit the orange button down below to Create an
+                order" />   
+            </div>
+            <div class="flex fixed w-full bottom-10 justify-center px-8 ">
+                <Btn class="w-[100%]" title="Start ordering" />
+            </div>
         </div>
     </div>
 </template>

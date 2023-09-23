@@ -61,7 +61,7 @@
 <script setup>
 const liked = ref(true);
 const buttonText = ref("Add to cart");
-const num = ref(0);
+const num = ref(1);
 const elementToStyle = ref(null);
 const toggleLike = () => {
     liked.value = !liked.value
@@ -121,7 +121,7 @@ definePageMeta({
 
 .incdec {
     font-family: "sf_Text";
-    font-weight: 400;
+    font-weight: 600;
 }
 
 .swiper-slide {
