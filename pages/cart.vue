@@ -4,14 +4,12 @@
         <PageHead text="Cart" />
 
         <div class="flex gap-5 flex-col items-center mx-7 mt-8 mb-12">
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
-            <Card />
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+            <ProductCard/>
+
         </div>
         <div class="flex fixed bottom-0 bg-inherit pt-2 pb-2 w-full justify-center">
             <NuxtLink to="/checkout" class="text-[#F6F6F9] bg-[#fa4a0c] w-[80%]  text-center btn text-[17px] p-4 py-5  rounded-[30px]

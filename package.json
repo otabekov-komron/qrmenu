@@ -17,8 +17,10 @@
   },
   "dependencies": {
     "@nuxt/image": "^1.0.0-rc.2",
+    "node-sass": "^9.0.0",
     "nuxt-swiper": "^1.2.2",
     "sass": "^1.64.2",
+    "sass-loader": "^13.3.2",
     "swiper": "^10.1.0",
     "vueperslides": "^3.5.1"
   }

@@ -23,21 +23,21 @@
                         </label>
                     </span>
                     <span>
-                        <input type="radio" v-model="selectedPage" id="payme" name="payment_type" value="payme">
+                        <input type="radio" id="payme" name="payment_type" value="">
                         <label for="payme">
                             <img src="/images/payme.png" class="bg-[#00CCCC] rounded-[10px] p-2 w-11" />
                             <p class="payment_type">Payme</p>
                         </label>
                     </span>
                     <span>
-                        <input type="radio" v-model="selectedPage" id="click" name="payment_type" value="click">
+                        <input type="radio"  id="click" name="payment_type" value="">
                         <label for="click">
                             <img src="/images/click.png" class="bg-[#343643] rounded-[10px] p-2 w-11" />
                             <p class="payment_type">Click</p>
                         </label>
                     </span>
                     <span>
-                        <input type="radio" v-model="selectedPage" id="uzum" name="payment_type" value="uzum">
+                        <input type="radio" id="uzum" name="payment_type" value="">
                         <label for="uzum">
                             <img src="/images/uzum.png" class="bg-[#6F00FF] rounded-[10px] p-2 w-11" />
                             <p class="payment_type">Uzum bank</p>

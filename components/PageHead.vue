@@ -1,5 +1,5 @@
 <template>
-    <div class="flex px-8 justify-between items-center">
+    <div class="flex px-8 justify-between items-center uppercase">
         <NuxtLink to="/">
             <Icon color="rgba(0, 0, 0, 1)" size="24px" name="material-symbols:arrow-back-ios-rounded" />
         </NuxtLink>

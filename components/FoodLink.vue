@@ -14,6 +14,6 @@ const props = defineProps({
     product: String,
 });
 </script>
-  
+
 
   
